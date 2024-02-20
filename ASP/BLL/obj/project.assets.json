@@ -1,11 +1,46 @@
 {
   "version": 3,
   "targets": {
-    "net6.0": {}
+    "net6.0": {
+      "DAL/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/DAL.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DAL.dll": {}
+        }
+      },
+      "Shared_Projet_ASP/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/Shared_Projet_ASP.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Shared_Projet_ASP.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "DAL/1.0.0": {
+      "type": "project",
+      "path": "../DAL/DAL.csproj",
+      "msbuildProject": "../DAL/DAL.csproj"
+    },
+    "Shared_Projet_ASP/1.0.0": {
+      "type": "project",
+      "path": "../Shared_Projet_ASP/Shared_Projet_ASP.csproj",
+      "msbuildProject": "../Shared_Projet_ASP/Shared_Projet_ASP.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net6.0": []
+    "net6.0": [
+      "DAL >= 1.0.0",
+      "Shared_Projet_ASP >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\y.arigui\\.nuget\\packages\\": {},
@@ -39,7 +74,14 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\y.arigui\\source\\repos\\Arigui_Yusrâ_Projet_ASP\\ASP\\DAL\\DAL.csproj": {
+              "projectPath": "C:\\Users\\y.arigui\\source\\repos\\Arigui_Yusrâ_Projet_ASP\\ASP\\DAL\\DAL.csproj"
+            },
+            "C:\\Users\\y.arigui\\source\\repos\\Arigui_Yusrâ_Projet_ASP\\ASP\\Shared_Projet_ASP\\Shared_Projet_ASP.csproj": {
+              "projectPath": "C:\\Users\\y.arigui\\source\\repos\\Arigui_Yusrâ_Projet_ASP\\ASP\\Shared_Projet_ASP\\Shared_Projet_ASP.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

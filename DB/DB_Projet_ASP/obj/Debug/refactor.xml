@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Operations Version="1.0">
+  <Operation Name="Rename Refactor" Key="54211727-bed4-4d83-a0da-2ae74f5caddd" ChangeDateTime="02/20/2024 09:03:55" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+    <Property Name="ElementName" Value="[dbo].[FK_Produit_ToTable]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[Produit]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_Produit_Categories]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="14dad408-a461-4364-a000-07cd53daa0ab" ChangeDateTime="02/20/2024 09:05:49" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+    <Property Name="ElementName" Value="[dbo].[Produit].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Produit]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Id_Prod" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="70491745-276e-480a-98fb-17853d5aa2ed" ChangeDateTime="02/20/2024 09:07:05" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+    <Property Name="ElementName" Value="[dbo].[Medias].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Medias]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Id_Med" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f65b76cd-9beb-494f-be51-479086902afb" ChangeDateTime="02/20/2024 09:08:07" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+    <Property Name="ElementName" Value="[dbo].[Medias].[[Id_Prod]]]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Medias]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Id_Prod" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="89c9f296-3bd0-41fb-a0a5-21a8cc8a623c" ChangeDateTime="02/20/2024 09:11:37" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+    <Property Name="ElementName" Value="[dbo].[Panier].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Panier]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Id_Panier" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="a05a9999-9ccf-411a-8831-c9e327f45d64" ChangeDateTime="02/20/2024 09:19:58" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+    <Property Name="ElementName" Value="[dbo].[Commandes].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Commandes]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Id_Com" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="4d6e28a5-8324-4213-bf6d-3ceb5173b8ca" ChangeDateTime="02/20/2024 09:28:45" xmlns="http://schemas.microsoft.com/sqlserver/dac/Serialization/2012/02">
+    <Property Name="ElementName" Value="[dbo].[CK_Produit_Column]" />
+    <Property Name="ElementType" Value="SqlCheckConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[Produit]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[CK_Produit_prix]" />
+  </Operation>
+</Operations>

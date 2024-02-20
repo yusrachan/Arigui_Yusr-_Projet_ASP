@@ -1,0 +1,10 @@
+C:\Users\y.arigui\source\repos\Arigui_Yusrâ_Projet_ASP\DB\DB_Projet_ASP\bin\Debug\DB_Projet_ASP.dacpac
+C:\Users\y.arigui\source\repos\Arigui_Yusrâ_Projet_ASP\DB\DB_Projet_ASP\bin\Debug\DB_Projet_ASP.dll
+C:\Users\y.arigui\source\repos\Arigui_Yusrâ_Projet_ASP\DB\DB_Projet_ASP\bin\Debug\DB_Projet_ASP.pdb
+C:\Users\y.arigui\source\repos\Arigui_Yusrâ_Projet_ASP\DB\DB_Projet_ASP\obj\Debug\DB_Projet_ASP.sqlproj.AssemblyReference.cache
+C:\Users\y.arigui\source\repos\Arigui_Yusrâ_Projet_ASP\DB\DB_Projet_ASP\obj\Debug\Model.xml
+C:\Users\y.arigui\source\repos\Arigui_Yusrâ_Projet_ASP\DB\DB_Projet_ASP\obj\Debug\refactor.xml
+C:\Users\y.arigui\source\repos\Arigui_Yusrâ_Projet_ASP\DB\DB_Projet_ASP\obj\Debug\postdeploy.sql
+C:\Users\y.arigui\source\repos\Arigui_Yusrâ_Projet_ASP\DB\DB_Projet_ASP\obj\Debug\predeploy.sql
+C:\Users\y.arigui\source\repos\Arigui_Yusrâ_Projet_ASP\DB\DB_Projet_ASP\obj\Debug\DB_Projet_ASP.dll
+C:\Users\y.arigui\source\repos\Arigui_Yusrâ_Projet_ASP\DB\DB_Projet_ASP\obj\Debug\DB_Projet_ASP.pdb

@@ -1,0 +1,4 @@
+C:\Users\y.arigui\source\repos\Arigui_Yusrâ_Projet_ASP\obj\Debug\net6.0\Arigui_Yusrâ_Projet_ASP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\y.arigui\source\repos\Arigui_Yusrâ_Projet_ASP\obj\Debug\net6.0\Arigui_Yusrâ_Projet_ASP.AssemblyInfoInputs.cache
+C:\Users\y.arigui\source\repos\Arigui_Yusrâ_Projet_ASP\obj\Debug\net6.0\Arigui_Yusrâ_Projet_ASP.AssemblyInfo.cs
+C:\Users\y.arigui\source\repos\Arigui_Yusrâ_Projet_ASP\obj\Debug\net6.0\Arigui_Yusrâ_Projet_ASP.csproj.CoreCompileInputs.cache

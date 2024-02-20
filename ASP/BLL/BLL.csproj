@@ -7,9 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Entities\" />
-    <Folder Include="Mappers\" />
-    <Folder Include="Services\" />
+    <ProjectReference Include="..\DAL\DAL.csproj" />
+    <ProjectReference Include="..\Shared_Projet_ASP\Shared_Projet_ASP.csproj" />
   </ItemGroup>
 
 </Project>
