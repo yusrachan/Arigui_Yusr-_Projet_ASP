@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "yPmYR7kgY99aIhZoDMeHQbaf8sdkIEW9ejyMIwDuQOq21y41fwsgi6IG9uEEI1JdePFFKi7aP5ERZIshFPR+bw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\y.arigui\\source\\repos\\Arigui_Yusrâ_Projet_ASP\\ASP\\Shared_Projet_ASP\\Shared_Projet_ASP.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\y.arigui\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.26\\microsoft.windowsdesktop.app.ref.6.0.26.nupkg.sha512",
+    "C:\\Users\\y.arigui\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.26\\microsoft.netcore.app.ref.6.0.26.nupkg.sha512",
+    "C:\\Users\\y.arigui\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.26\\microsoft.aspnetcore.app.ref.6.0.26.nupkg.sha512"
+  ],
+  "logs": []
+}

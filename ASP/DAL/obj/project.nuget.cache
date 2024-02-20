@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "tR6A5y7KGnsEtGnZzZ9V08Ok5ctuRUqwt+5lCS25xui+KyHush3NmOtLA+ImkMgpiFLtHiOeQDYI6tbxDSVa8g==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\y.arigui\\source\\repos\\Arigui_Yusrâ_Projet_ASP\\ASP\\DAL\\DAL.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\y.arigui\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.27\\microsoft.windowsdesktop.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\y.arigui\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.27\\microsoft.netcore.app.ref.6.0.27.nupkg.sha512",
+    "C:\\Users\\y.arigui\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.27\\microsoft.aspnetcore.app.ref.6.0.27.nupkg.sha512"
+  ],
+  "logs": []
+}
