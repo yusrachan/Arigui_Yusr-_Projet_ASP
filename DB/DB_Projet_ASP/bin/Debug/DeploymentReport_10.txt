@@ -1,0 +1,26 @@
+﻿** Met en surbrillance
+     Tables qui seront recréées avec les données migrées
+       Aucun
+     Index ordonnés en clusters à supprimer
+       Aucun
+     Index ordonnés en clusters à créer.
+       Aucun
+     Problèmes de données possibles
+       La colonne [dbo].[Produit].[Id_Med] est en cours de suppression, des données risquent d'être perdues.
+
+** Actions de l'utilisateur
+     Supprimer
+       [dbo].[FK_Produit_Medias] (Clé étrangère)
+     Modifier
+       [dbo].[Produit] (Table)
+       [dbo].[SP_Produit_GetAll] (Procédure)
+       [dbo].[SP_Produit_GetById] (Procédure)
+       [dbo].[SP_Produit_Insert] (Procédure)
+       [dbo].[SP_Produit_Update] (Procédure)
+
+** Actions de support
+     Actualiser
+       [dbo].[SP_Produit_Delete] (Procédure)
+
+La colonne [dbo].[Produit].[Id_Med] est en cours de suppression, des données risquent d'être perdues.
+

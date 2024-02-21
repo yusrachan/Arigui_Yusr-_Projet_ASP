@@ -1,0 +1,11 @@
+C:\Users\y.arigui\source\repos\Arigui_Yusrâ_Projet_ASP\ASP\DAL\bin\Debug\net6.0\DAL.deps.json
+C:\Users\y.arigui\source\repos\Arigui_Yusrâ_Projet_ASP\ASP\DAL\bin\Debug\net6.0\DAL.dll
+C:\Users\y.arigui\source\repos\Arigui_Yusrâ_Projet_ASP\ASP\DAL\bin\Debug\net6.0\DAL.pdb
+C:\Users\y.arigui\source\repos\Arigui_Yusrâ_Projet_ASP\ASP\DAL\obj\Debug\net6.0\DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\y.arigui\source\repos\Arigui_Yusrâ_Projet_ASP\ASP\DAL\obj\Debug\net6.0\DAL.AssemblyInfoInputs.cache
+C:\Users\y.arigui\source\repos\Arigui_Yusrâ_Projet_ASP\ASP\DAL\obj\Debug\net6.0\DAL.AssemblyInfo.cs
+C:\Users\y.arigui\source\repos\Arigui_Yusrâ_Projet_ASP\ASP\DAL\obj\Debug\net6.0\DAL.csproj.CoreCompileInputs.cache
+C:\Users\y.arigui\source\repos\Arigui_Yusrâ_Projet_ASP\ASP\DAL\obj\Debug\net6.0\DAL.dll
+C:\Users\y.arigui\source\repos\Arigui_Yusrâ_Projet_ASP\ASP\DAL\obj\Debug\net6.0\refint\DAL.dll
+C:\Users\y.arigui\source\repos\Arigui_Yusrâ_Projet_ASP\ASP\DAL\obj\Debug\net6.0\DAL.pdb
+C:\Users\y.arigui\source\repos\Arigui_Yusrâ_Projet_ASP\ASP\DAL\obj\Debug\net6.0\ref\DAL.dll

@@ -13,6 +13,18 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\y.arigui\\source\\repos\\Arigui_Yusrâ_Projet_ASP\\ASP\\Projet_ASP\\wwwroot\\images\\TV-LED-Samsung.jpg",
+      "PackagePath": "staticwebassets\\images\\TV-LED-Samsung.jpg"
+    },
+    {
+      "Id": "C:\\Users\\y.arigui\\source\\repos\\Arigui_Yusrâ_Projet_ASP\\ASP\\Projet_ASP\\wwwroot\\images\\iphone-14.jpg",
+      "PackagePath": "staticwebassets\\images\\iphone-14.jpg"
+    },
+    {
+      "Id": "C:\\Users\\y.arigui\\source\\repos\\Arigui_Yusrâ_Projet_ASP\\ASP\\Projet_ASP\\wwwroot\\images\\moi.jpg",
+      "PackagePath": "staticwebassets\\images\\moi.jpg"
+    },
+    {
       "Id": "C:\\Users\\y.arigui\\source\\repos\\Arigui_Yusrâ_Projet_ASP\\ASP\\Projet_ASP\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

@@ -56,17 +56,43 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="Tables" />
+    <Folder Include="StoredProcedures" />
+    <Folder Include="Scripts" />
   </ItemGroup>
   <ItemGroup>
-    <Build Include="Produit.sql" />
-    <Build Include="Categories.sql" />
-    <Build Include="Medias.sql" />
-    <Build Include="Commandes.sql" />
+    <Build Include="Tables\Categories.sql" />
+    <Build Include="Tables\Commandes.sql" />
+    <Build Include="Tables\Medias.sql" />
+    <Build Include="Tables\Produit.sql" />
+    <Build Include="StoredProcedures\SP_Categories_Delete.sql" />
+    <Build Include="StoredProcedures\SP_Categories_GetAll.sql" />
+    <Build Include="StoredProcedures\SP_Categories_GetById.sql" />
+    <Build Include="StoredProcedures\SP_Categories_Insert.sql" />
+    <Build Include="StoredProcedures\SP_Categories_Update.sql" />
+    <Build Include="StoredProcedures\SP_Commandes_Delete.sql" />
+    <Build Include="StoredProcedures\SP_Commandes_GetAll.sql" />
+    <Build Include="StoredProcedures\SP_Commandes_GetById.sql" />
+    <Build Include="StoredProcedures\SP_Commandes_Insert.sql" />
+    <Build Include="StoredProcedures\SP_Commandes_Update.sql" />
+    <Build Include="StoredProcedures\SP_Medias_Delete.sql" />
+    <Build Include="StoredProcedures\SP_Medias_GetAll.sql" />
+    <Build Include="StoredProcedures\SP_Medias_GetById.sql" />
+    <Build Include="StoredProcedures\SP_Medias_Insert.sql" />
+    <Build Include="StoredProcedures\SP_Medias_Update.sql" />
+    <Build Include="StoredProcedures\SP_Produit_Delete.sql" />
+    <Build Include="StoredProcedures\SP_Produit_GetAll.sql" />
+    <Build Include="StoredProcedures\SP_Produit_GetById.sql" />
+    <Build Include="StoredProcedures\SP_Produit_Insert.sql" />
+    <Build Include="StoredProcedures\SP_Produit_Update.sql" />
   </ItemGroup>
   <ItemGroup>
     <RefactorLog Include="DB_Projet_ASP.refactorlog" />
   </ItemGroup>
   <ItemGroup>
     <None Include="DB_Projet_ASP.publish.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Scripts\Main.Script.PostDeployment.sql" />
   </ItemGroup>
 </Project>

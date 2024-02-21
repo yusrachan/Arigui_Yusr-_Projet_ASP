@@ -1,6 +1,6 @@
 ﻿CREATE TABLE [dbo].[Commandes]
 (
-	[Id_Com] INT NOT NULL PRIMARY KEY, 
+	[Id_Com] INT IDENTITY NOT NULL PRIMARY KEY, 
     [quantite] INT NOT NULL, 
     [total] DECIMAL(10, 2) NOT NULL, 
     [Id_Prod] INT NOT NULL, 

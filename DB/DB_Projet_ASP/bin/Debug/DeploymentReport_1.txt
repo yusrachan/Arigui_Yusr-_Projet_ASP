@@ -1,0 +1,44 @@
+﻿** Met en surbrillance
+     Tables qui seront recréées avec les données migrées
+       Aucun
+     Index ordonnés en clusters à supprimer
+       Aucun
+     Index ordonnés en clusters à créer.
+       Aucun
+     Problèmes de données possibles
+       La colonne [dbo].[Produit].[Id_Med] de la table [dbo].[Produit] doit être ajoutée mais la colonne ne comporte pas de
+         valeur par défaut et n'autorise pas les valeurs NULL. Si la table contient des données, le script ALTER ne fonctionnera
+         pas. Pour éviter ce problème, vous devez ajouter une valeur par défaut à la colonne, la marquer comme autorisant les
+         valeurs Null ou activer la génération de smart-defaults en tant qu'option de déploiement.
+
+** Actions de l'utilisateur
+     Modifier
+       [dbo].[Medias] (Table)
+       [dbo].[Produit] (Table)
+     Créer
+       [dbo].[FK_Produit_Medias] (Clé étrangère)
+       [dbo].[SP_Categories_Delete] (Procédure)
+       [dbo].[SP_Categories_GetAll] (Procédure)
+       [dbo].[SP_Categories_GetById] (Procédure)
+       [dbo].[SP_Categories_Insert] (Procédure)
+       [dbo].[SP_Categories_Update] (Procédure)
+       [dbo].[SP_Commandes_Delete] (Procédure)
+       [dbo].[SP_Commandes_GetAll] (Procédure)
+       [dbo].[SP_Commandes_GetById] (Procédure)
+       [dbo].[SP_Commandes_Insert] (Procédure)
+       [dbo].[SP_Commandes_Update] (Procédure)
+       [dbo].[SP_Medias_Delete] (Procédure)
+       [dbo].[SP_Medias_GetAll] (Procédure)
+       [dbo].[SP_Medias_GetById] (Procédure)
+       [dbo].[SP_Medias_Insert] (Procédure)
+       [dbo].[SP_Medias_Update] (Procédure)
+       [dbo].[SP_Produit_Delete] (Procédure)
+       [dbo].[SP_Produit_GetAll] (Procédure)
+       [dbo].[SP_Produit_GetById] (Procédure)
+       [dbo].[SP_Produit_Insert] (Procédure)
+       [dbo].[SP_Produit_Update] (Procédure)
+
+** Actions de support
+
+La colonne [dbo].[Produit].[Id_Med] de la table [dbo].[Produit] doit être ajoutée mais la colonne ne comporte pas de valeur par défaut et n'autorise pas les valeurs NULL. Si la table contient des données, le script ALTER ne fonctionnera pas. Pour éviter ce problème, vous devez ajouter une valeur par défaut à la colonne, la marquer comme autorisant les valeurs Null ou activer la génération de smart-defaults en tant qu'option de déploiement.
+

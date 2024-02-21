@@ -1,0 +1,11 @@
+C:\Users\y.arigui\source\repos\Arigui_Yusrâ_Projet_ASP\ASP\Shared_Projet_ASP\bin\Debug\net6.0\Shared_Projet_ASP.deps.json
+C:\Users\y.arigui\source\repos\Arigui_Yusrâ_Projet_ASP\ASP\Shared_Projet_ASP\bin\Debug\net6.0\Shared_Projet_ASP.dll
+C:\Users\y.arigui\source\repos\Arigui_Yusrâ_Projet_ASP\ASP\Shared_Projet_ASP\bin\Debug\net6.0\Shared_Projet_ASP.pdb
+C:\Users\y.arigui\source\repos\Arigui_Yusrâ_Projet_ASP\ASP\Shared_Projet_ASP\obj\Debug\net6.0\Shared_Projet_ASP.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\y.arigui\source\repos\Arigui_Yusrâ_Projet_ASP\ASP\Shared_Projet_ASP\obj\Debug\net6.0\Shared_Projet_ASP.AssemblyInfoInputs.cache
+C:\Users\y.arigui\source\repos\Arigui_Yusrâ_Projet_ASP\ASP\Shared_Projet_ASP\obj\Debug\net6.0\Shared_Projet_ASP.AssemblyInfo.cs
+C:\Users\y.arigui\source\repos\Arigui_Yusrâ_Projet_ASP\ASP\Shared_Projet_ASP\obj\Debug\net6.0\Shared_Projet_ASP.csproj.CoreCompileInputs.cache
+C:\Users\y.arigui\source\repos\Arigui_Yusrâ_Projet_ASP\ASP\Shared_Projet_ASP\obj\Debug\net6.0\Shared_Projet_ASP.dll
+C:\Users\y.arigui\source\repos\Arigui_Yusrâ_Projet_ASP\ASP\Shared_Projet_ASP\obj\Debug\net6.0\refint\Shared_Projet_ASP.dll
+C:\Users\y.arigui\source\repos\Arigui_Yusrâ_Projet_ASP\ASP\Shared_Projet_ASP\obj\Debug\net6.0\Shared_Projet_ASP.pdb
+C:\Users\y.arigui\source\repos\Arigui_Yusrâ_Projet_ASP\ASP\Shared_Projet_ASP\obj\Debug\net6.0\ref\Shared_Projet_ASP.dll

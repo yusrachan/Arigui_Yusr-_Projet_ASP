@@ -1,0 +1,53 @@
+﻿** Met en surbrillance
+     Tables qui seront recréées avec les données migrées
+       [dbo].[Categories]
+       [dbo].[Commandes]
+       [dbo].[Medias]
+       [dbo].[Produit]
+     Index ordonnés en clusters à supprimer
+       Aucun
+     Index ordonnés en clusters à créer.
+       Aucun
+     Problèmes de données possibles
+       Aucun
+
+** Actions de l'utilisateur
+     Recréer la table
+       [dbo].[Categories] (Table)
+       [dbo].[Commandes] (Table)
+       [dbo].[Medias] (Table)
+       [dbo].[Produit] (Table)
+
+** Actions de support
+     Supprimer
+       [dbo].[FK_Produit_Categories] (Clé étrangère)
+       [dbo].[FK_Commandes_Produit] (Clé étrangère)
+       [dbo].[FK_Medias_Produit] (Clé étrangère)
+       [dbo].[FK_Produit_Medias] (Clé étrangère)
+     Créer
+       [dbo].[FK_Produit_Categories] (Clé étrangère)
+       [dbo].[FK_Commandes_Produit] (Clé étrangère)
+       [dbo].[FK_Medias_Produit] (Clé étrangère)
+       [dbo].[FK_Produit_Medias] (Clé étrangère)
+       [dbo].[CK_Produit_prix] (Contrainte de validation)
+     Actualiser
+       [dbo].[SP_Categories_Delete] (Procédure)
+       [dbo].[SP_Categories_GetAll] (Procédure)
+       [dbo].[SP_Categories_GetById] (Procédure)
+       [dbo].[SP_Categories_Insert] (Procédure)
+       [dbo].[SP_Categories_Update] (Procédure)
+       [dbo].[SP_Commandes_Delete] (Procédure)
+       [dbo].[SP_Commandes_GetAll] (Procédure)
+       [dbo].[SP_Commandes_GetById] (Procédure)
+       [dbo].[SP_Commandes_Insert] (Procédure)
+       [dbo].[SP_Commandes_Update] (Procédure)
+       [dbo].[SP_Medias_Delete] (Procédure)
+       [dbo].[SP_Medias_GetAll] (Procédure)
+       [dbo].[SP_Medias_GetById] (Procédure)
+       [dbo].[SP_Medias_Insert] (Procédure)
+       [dbo].[SP_Medias_Update] (Procédure)
+       [dbo].[SP_Produit_Delete] (Procédure)
+       [dbo].[SP_Produit_GetAll] (Procédure)
+       [dbo].[SP_Produit_GetById] (Procédure)
+       [dbo].[SP_Produit_Insert] (Procédure)
+       [dbo].[SP_Produit_Update] (Procédure)

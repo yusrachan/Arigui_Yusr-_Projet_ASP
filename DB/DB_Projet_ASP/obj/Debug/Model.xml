@@ -50,6 +50,25 @@
 					<Element Type="SqlIndexedColumnSpecification">
 						<Relationship Name="Column">
 							<Entry>
+								<References Name="[dbo].[Categories].[Id_Cat]" />
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="DefiningTable">
+				<Entry>
+					<References Name="[dbo].[Categories]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="3" />
+		</Element>
+		<Element Type="SqlPrimaryKeyConstraint">
+			<Relationship Name="ColumnSpecifications">
+				<Entry>
+					<Element Type="SqlIndexedColumnSpecification">
+						<Relationship Name="Column">
+							<Entry>
 								<References Name="[dbo].[Commandes].[Id_Com]" />
 							</Entry>
 						</Relationship>
@@ -61,7 +80,7 @@
 					<References Name="[dbo].[Commandes]" />
 				</Entry>
 			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="3" />
+			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="4" />
 		</Element>
 		<Element Type="SqlPrimaryKeyConstraint">
 			<Relationship Name="ColumnSpecifications">
@@ -78,25 +97,6 @@
 			<Relationship Name="DefiningTable">
 				<Entry>
 					<References Name="[dbo].[Medias]" />
-				</Entry>
-			</Relationship>
-			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="4" />
-		</Element>
-		<Element Type="SqlPrimaryKeyConstraint">
-			<Relationship Name="ColumnSpecifications">
-				<Entry>
-					<Element Type="SqlIndexedColumnSpecification">
-						<Relationship Name="Column">
-							<Entry>
-								<References Name="[dbo].[Categories].[Id_Cat]" />
-							</Entry>
-						</Relationship>
-					</Element>
-				</Entry>
-			</Relationship>
-			<Relationship Name="DefiningTable">
-				<Entry>
-					<References Name="[dbo].[Categories]" />
 				</Entry>
 			</Relationship>
 			<Annotation Type="SqlInlineConstraintAnnotation" Disambiguator="5" />
@@ -126,6 +126,7 @@
 				<Entry>
 					<Element Type="SqlSimpleColumn" Name="[dbo].[Categories].[Id_Cat]">
 						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
@@ -137,7 +138,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="5" />
+						<AttachedAnnotation Disambiguator="3" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -186,6 +187,7 @@
 				<Entry>
 					<Element Type="SqlSimpleColumn" Name="[dbo].[Commandes].[Id_Com]">
 						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
@@ -197,7 +199,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="3" />
+						<AttachedAnnotation Disambiguator="4" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -333,6 +335,7 @@
 				<Entry>
 					<Element Type="SqlSimpleColumn" Name="[dbo].[Medias].[Id_Med]">
 						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
@@ -344,7 +347,7 @@
 								</Element>
 							</Entry>
 						</Relationship>
-						<AttachedAnnotation Disambiguator="4" />
+						<AttachedAnnotation Disambiguator="5" />
 					</Element>
 				</Entry>
 				<Entry>
@@ -372,7 +375,7 @@
 									<Property Name="Length" Value="255" />
 									<Relationship Name="Type">
 										<Entry>
-											<References ExternalSource="BuiltIns" Name="[varchar]" />
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
 										</Entry>
 									</Relationship>
 								</Element>
@@ -394,6 +397,7 @@
 				<Entry>
 					<Element Type="SqlSimpleColumn" Name="[dbo].[Produit].[Id_Prod]">
 						<Property Name="IsNullable" Value="False" />
+						<Property Name="IsIdentity" Value="True" />
 						<Relationship Name="TypeSpecifier">
 							<Entry>
 								<Element Type="SqlTypeSpecifier">
@@ -499,6 +503,1375 @@
 			</Relationship>
 			<AttachedAnnotation Disambiguator="10" />
 			<AttachedAnnotation Disambiguator="7" />
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[SP_Categories_Delete]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	DELETE FROM [Categories]
+		WHERE [Id_Cat] = @id_categories]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Categories]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Categories].[Id_Cat]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Categories_Delete].[@id_categories]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Categories_Delete].[@id_categories]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="132" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[SP_Categories_Delete]&#xD;&#xA;&#x9;@id_categories INT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[SP_Categories_GetAll]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	SELECT [Id_Cat]
+			[nom]
+	FROM [Categories]]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Categories]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Categories].[Id_Cat]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="97" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[SP_Categories_GetAll]&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[SP_Categories_GetById]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	SELECT [Id_Cat],
+			[nom]
+	FROM [Categories]
+	WHERE [Id_Cat] = @id_cat]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Categories]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Categories].[Id_Cat]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Categories].[nom]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Categories_GetById].[@id_cat]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Categories_GetById].[@id_cat]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="140" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[SP_Categories_GetById]&#xD;&#xA;&#x9;@id_cat INT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[SP_Categories_Insert]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	INSERT INTO [Categories] ([nom])
+		OUTPUT [inserted].[Id_Cat]
+		VALUES (@nom)]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Categories]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Categories].[nom]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Categories_Insert].[@nom]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Categories].[Id_Cat]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Categories_Insert].[@nom]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="64" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="151" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[SP_Categories_Insert]&#xD;&#xA;&#x9;@nom NVARCHAR(64)&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[SP_Categories_Update]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	UPDATE [Categories]
+		SET [nom] = @nom
+		WHERE [Id_Cat] = @id_cat]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Categories]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Categories].[nom]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Categories_Update].[@nom]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Categories].[Id_Cat]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Categories_Update].[@id_cat]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Categories_Update].[@id_cat]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Categories_Update].[@nom]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="64" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="154" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[SP_Categories_Update]&#xD;&#xA;&#x9;@id_cat INT,&#xD;&#xA;&#x9;@nom NVARCHAR(64)&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[SP_Commandes_Delete]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	DELETE FROM [Commandes]
+		WHERE [Id_Com] = @id_com]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Commandes]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Commandes].[Id_Com]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Commandes_Delete].[@id_com]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Commandes_Delete].[@id_com]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="116" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[SP_Commandes_Delete]&#xD;&#xA;&#x9;@id_com INT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[SP_Commandes_GetAll]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	SELECT [Id_Com]
+			[quantite],
+			[total],
+			[Id_Prod]
+	FROM [Commandes]]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Commandes]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Commandes].[Id_Com]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Commandes].[total]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Commandes].[Id_Prod]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="128" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[SP_Commandes_GetAll]&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[SP_Commandes_GetById]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	SELECT [Id_Com],
+			[quantite],
+			[total],
+			[Id_Prod]
+	FROM [Commandes]
+	WHERE [Id_Com] = @id_com]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Commandes]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Commandes].[Id_Com]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Commandes].[quantite]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Commandes].[total]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Commandes].[Id_Prod]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Commandes_GetById].[@id_com]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Commandes_GetById].[@id_com]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="171" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[SP_Commandes_GetById]&#xD;&#xA;&#x9;@id_com INT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[SP_Commandes_Insert]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	INSERT INTO [Commandes] ([quantite], [total], [Id_Prod])
+		OUTPUT [inserted].[Id_Com]
+		VALUES (@quant, @tot, @id_prod)]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Commandes]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Commandes].[quantite]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Commandes].[total]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Commandes].[Id_Prod]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Commandes_Insert].[@quant]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Commandes_Insert].[@tot]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Commandes_Insert].[@id_prod]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Commandes].[Id_Com]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Commandes_Insert].[@quant]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Commandes_Insert].[@tot]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="2" />
+									<Property Name="Precision" Value="10" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[decimal]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Commandes_Insert].[@id_prod]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="223" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[SP_Commandes_Insert]&#xD;&#xA;&#x9;@quant INT,&#xD;&#xA;&#x9;@tot DECIMAL(10,2),&#xD;&#xA;&#x9;@id_prod INT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[SP_Commandes_Update]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	UPDATE [Commandes]
+		SET [quantite] = @quant,
+			[total] = @tot,
+			[Id_Prod] = @id_prod
+		WHERE [Id_Com] = @id_com]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Commandes]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Commandes].[quantite]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Commandes_Update].[@quant]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Commandes].[total]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Commandes_Update].[@tot]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Commandes].[Id_Prod]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Commandes_Update].[@id_prod]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Commandes].[Id_Com]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Commandes_Update].[@id_com]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Commandes_Update].[@id_com]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Commandes_Update].[@quant]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Commandes_Update].[@tot]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="2" />
+									<Property Name="Precision" Value="10" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[decimal]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Commandes_Update].[@id_prod]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="236" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[SP_Commandes_Update]&#xD;&#xA;&#x9;@id_com INT,&#xD;&#xA;&#x9;@quant INT,&#xD;&#xA;&#x9;@tot DECIMAL(10,2),&#xD;&#xA;&#x9;@id_prod INT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[SP_Medias_Delete]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	DELETE FROM [Medias]
+		WHERE [Id_Med] = @id_med]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Medias]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Medias].[Id_Med]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Medias_Delete].[@id_med]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Medias_Delete].[@id_med]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="110" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[SP_Medias_Delete]&#xD;&#xA;&#x9;@id_med INT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[SP_Medias_GetAll]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	SELECT [Id_Med],
+			[lien],
+			[Id_Prod]
+	FROM [Medias]]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Medias]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Medias].[Id_Med]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Medias].[lien]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Medias].[Id_Prod]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="106" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[SP_Medias_GetAll]&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[SP_Medias_GetById]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	SELECT [Id_Med],
+			[lien],
+			[Id_Prod]
+	FROM [Medias]
+	WHERE [Id_Med] = @id_med]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Medias]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Medias].[Id_Med]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Medias].[lien]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Medias].[Id_Prod]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Medias_GetById].[@id_med]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Medias_GetById].[@id_med]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="148" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[SP_Medias_GetById]&#xD;&#xA;&#x9;@id_med INT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[SP_Medias_Insert]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	INSERT INTO [Medias] ([lien], [Id_Prod])
+		OUTPUT [inserted].[Id_Med]
+		VALUES (@li, @id_prod)]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Medias]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Medias].[lien]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Medias].[Id_Prod]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Medias_Insert].[@li]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Medias_Insert].[@id_prod]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Medias].[Id_Med]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Medias_Insert].[@id_prod]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Medias_Insert].[@li]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="255" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="180" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[SP_Medias_Insert]&#xD;&#xA;&#x9;@id_prod INT,&#xD;&#xA;&#x9;@li NVARCHAR(255)&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[SP_Medias_Update]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	UPDATE [Medias]
+		SET [lien] = @li,
+			[Id_Prod] = @id_prod
+		WHERE [Id_Med] = @id_med]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Medias]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Medias].[lien]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Medias_Update].[@li]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Medias].[Id_Prod]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Medias_Update].[@id_prod]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Medias].[Id_Med]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Medias_Update].[@id_med]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Medias_Update].[@id_med]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Medias_Update].[@li]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="255" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Medias_Update].[@id_prod]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="188" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[SP_Medias_Update]&#xD;&#xA;&#x9;@id_med INT,&#xD;&#xA;&#x9;@li NVARCHAR(255),&#xD;&#xA;&#x9;@id_prod INT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[SP_Produit_Delete]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	DELETE FROM [Produit]
+		WHERE [Id_Prod] = @id_prod]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Produit]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[Id_Prod]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Produit_Delete].[@id_prod]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Produit_Delete].[@id_prod]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="115" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[SP_Produit_Delete]&#xD;&#xA;&#x9;@id_prod INT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[SP_Produit_GetAll]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	SELECT [Id_Prod],
+			[nom],
+			[description],
+			[prix],
+			[cri_eco],
+			[Id_Cat]
+	FROM [Produit]]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Produit]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[Id_Prod]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[nom]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[description]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[prix]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[cri_eco]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[Id_Cat]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="153" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[SP_Produit_GetAll]&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[SP_Produit_GetById]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	SELECT [Id_Prod],
+			[nom],
+			[description],
+			[prix],
+			[cri_eco],
+			[Id_Cat]
+	FROM [Produit]
+	WHERE [Id_Prod] = @id_prod]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Produit]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[Id_Prod]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[nom]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[description]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[prix]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[cri_eco]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[Id_Cat]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Produit_GetById].[@id_prod]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Produit_GetById].[@id_prod]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="198" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[SP_Produit_GetById]&#xD;&#xA;&#x9;@id_prod INT&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[SP_Produit_Insert]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	INSERT INTO [Produit] ([nom], [description], [prix], [cri_eco], [Id_Cat])
+		OUTPUT [inserted].[Id_Prod]
+		VALUES (@no, @desc, @pri, @cr_ec, @id_cat)]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Produit]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[nom]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[description]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[prix]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[cri_eco]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[Id_Cat]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Produit_Insert].[@no]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Produit_Insert].[@desc]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Produit_Insert].[@pri]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Produit_Insert].[@cr_ec]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Produit_Insert].[@id_cat]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[Id_Prod]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Produit_Insert].[@no]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="64" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Produit_Insert].[@desc]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Produit_Insert].[@pri]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="2" />
+									<Property Name="Precision" Value="10" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[decimal]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Produit_Insert].[@cr_ec]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="64" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Produit_Insert].[@id_cat]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="301" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[SP_Produit_Insert]&#xD;&#xA;&#x9;@no NVARCHAR(64),&#xD;&#xA;&#x9;@desc NVARCHAR(MAX),&#xD;&#xA;&#x9;@pri DECIMAL(10,2),&#xD;&#xA;&#x9;@cr_ec NVARCHAR(64),&#xD;&#xA;&#x9;@id_cat int&#xD;&#xA;AS" />
+			</Annotation>
+		</Element>
+		<Element Type="SqlProcedure" Name="[dbo].[SP_Produit_Update]">
+			<Property Name="BodyScript">
+				<Value><![CDATA[
+	UPDATE [Produit]
+		SET [nom] = @no,
+			[description] = @desc,
+			[prix] = @pri,
+			[cri_eco] = @cr_ec,
+			[Id_Cat] = @id_cat
+		WHERE [Id_Prod] = @id_prod]]></Value>
+			</Property>
+			<Property Name="IsAnsiNullsOn" Value="True" />
+			<Relationship Name="BodyDependencies">
+				<Entry>
+					<References Name="[dbo].[Produit]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[nom]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Produit_Update].[@no]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[description]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Produit_Update].[@desc]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[prix]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Produit_Update].[@pri]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[cri_eco]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Produit_Update].[@cr_ec]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[Id_Cat]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Produit_Update].[@id_cat]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[Produit].[Id_Prod]" />
+				</Entry>
+				<Entry>
+					<References Name="[dbo].[SP_Produit_Update].[@id_prod]" />
+				</Entry>
+			</Relationship>
+			<Relationship Name="Parameters">
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Produit_Update].[@id_prod]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Produit_Update].[@no]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="64" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Produit_Update].[@desc]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="IsMax" Value="True" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Produit_Update].[@pri]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Scale" Value="2" />
+									<Property Name="Precision" Value="10" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[decimal]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Produit_Update].[@cr_ec]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Property Name="Length" Value="64" />
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[nvarchar]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+				<Entry>
+					<Element Type="SqlSubroutineParameter" Name="[dbo].[SP_Produit_Update].[@id_cat]">
+						<Relationship Name="Type">
+							<Entry>
+								<Element Type="SqlTypeSpecifier">
+									<Relationship Name="Type">
+										<Entry>
+											<References ExternalSource="BuiltIns" Name="[int]" />
+										</Entry>
+									</Relationship>
+								</Element>
+							</Entry>
+						</Relationship>
+					</Element>
+				</Entry>
+			</Relationship>
+			<Relationship Name="Schema">
+				<Entry>
+					<References ExternalSource="BuiltIns" Name="[dbo]" />
+				</Entry>
+			</Relationship>
+			<Annotation Type="SysCommentsObjectAnnotation">
+				<Property Name="Length" Value="326" />
+				<Property Name="StartLine" Value="1" />
+				<Property Name="StartColumn" Value="1" />
+				<Property Name="HeaderContents" Value="CREATE PROCEDURE [dbo].[SP_Produit_Update]&#xD;&#xA;&#x9;@id_prod INT,&#xD;&#xA;&#x9;@no NVARCHAR(64),&#xD;&#xA;&#x9;@desc NVARCHAR(MAX),&#xD;&#xA;&#x9;@pri DECIMAL(10,2),&#xD;&#xA;&#x9;@cr_ec NVARCHAR(64),&#xD;&#xA;&#x9;@id_cat int&#xD;&#xA;AS" />
+			</Annotation>
 		</Element>
 	</Model>
 </DataSchemaModel>
