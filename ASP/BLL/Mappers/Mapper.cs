@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BLL.Mappers
+﻿namespace BLL.Mappers
 {
     internal static class Mapper
     {
@@ -63,6 +57,42 @@ namespace BLL.Mappers
                 Id_Com = entity.Id_Com,
                 Quantite = entity.Quantite,
                 Id_Prod = entity.Id_Prod,
+            };
+        }
+        #endregion
+
+        #region Produit
+        public static BLL.Entities.Produit ToBLL(this DAL.Entities.Produit entity)
+        {
+            if (entity is null)
+            {
+                return null;
+            }
+
+            return new BLL.Entities.Produit(
+                entity.Id_Prod,
+                entity.Name,
+                entity.Description,
+                entity.Price,
+                entity.Eco_Cri,
+                entity.Id_Cat);
+        }
+
+        public static DAL.Entities.Produit ToDAL(this BLL.Entities.Produit entity)
+        {
+            if(entity is null)
+            {
+                return null;
+            }
+
+            return new DAL.Entities.Produit
+            {
+                Id_Prod = entity.Id_Prod,
+                Name = entity.Name,
+                Description = entity.Description,
+                Price = entity.Price,
+                Eco_Cri = entity.Eco_Cri,
+                Id_Cat = entity.Id_Cat
             };
         }
         #endregion

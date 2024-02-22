@@ -1,12 +1,7 @@
 ﻿using DL = DAL.Entities;
-using Shared_Projet_ASP.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BLL.Mappers;
 using BLL.Entities;
+using BLL.Mappers;
+using Shared_Projet_ASP.Repositories;
 
 namespace BLL.Services
 {
