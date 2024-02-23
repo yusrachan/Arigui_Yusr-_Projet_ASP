@@ -71,10 +71,10 @@
 
             return new BLL.Entities.Produit(
                 entity.Id_Prod,
-                entity.Name,
-                entity.Description,
-                entity.Price,
-                entity.Eco_Cri,
+                entity.nom,
+                entity.description,
+                entity.prix,
+                entity.cri_eco,
                 entity.Id_Cat);
         }
 
@@ -88,10 +88,10 @@
             return new DAL.Entities.Produit
             {
                 Id_Prod = entity.Id_Prod,
-                Name = entity.Name,
-                Description = entity.Description,
-                Price = entity.Price,
-                Eco_Cri = entity.Eco_Cri,
+                nom = entity.nom,
+                description = entity.description,
+                prix = entity.prix,
+                cri_eco = entity.cri_eco,
                 Id_Cat = entity.Id_Cat
             };
         }

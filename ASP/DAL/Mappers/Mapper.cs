@@ -19,12 +19,12 @@ namespace DAL.Mappers
 
             return new Produit
             {
-                Id_Prod = (int)record[nameof(Produit.Id_Prod)],
-                Name = (string)record[nameof(Produit.Name)],
-                Description = (string)record[nameof(Produit.Description)],
-                Price = (double)record[nameof(Produit.Price)],
-                Eco_Cri = (string)record[nameof(Produit.Eco_Cri)],
-                Id_Cat = (int)record[nameof(Produit.Id_Cat)]
+                Id_Prod = record.GetInt32(record.GetOrdinal("Id_Prod")),
+                nom = record.IsDBNull(record.GetOrdinal("nom")) ? null : record.GetString(record.GetOrdinal("nom")),
+                description = record.IsDBNull(record.GetOrdinal("description")) ? null : record.GetString(record.GetOrdinal("description")),
+                prix = (float)record.GetDouble(record.GetOrdinal("prix")),
+                cri_eco = record.IsDBNull(record.GetOrdinal("cri_eco")) ? null : record.GetString(record.GetOrdinal("cri_eco")),
+                Id_Cat = record.GetInt32(record.GetOrdinal("Id_Cat"))
             };
         }
     }

@@ -17,8 +17,8 @@ namespace Projet_ASP.Handlers
             return new ProductListItem
             {
                 Id_Prod = entity.Id_Prod,
-                Name = entity.Name,
-                Price = entity.Price
+                Name = entity.nom,
+                Price = entity.prix
             };
         }
 
@@ -32,10 +32,10 @@ namespace Projet_ASP.Handlers
             return new ProductDetails
             {
                 Id_Prod = entity.Id_Prod,
-                Name = entity.Name,
-                Description = entity.Description,
-                Price = entity.Price,
-                Eco_Cri = entity.Eco_Cri,
+                Name = entity.nom,
+                Description = entity.description,
+                Price = entity.prix,
+                Eco_Cri = entity.cri_eco,
             };
         }
 
@@ -47,10 +47,10 @@ namespace Projet_ASP.Handlers
             }
 
             return new Produit(
-                entity.Name,
-                entity.Description,
-                entity.Price,
-                entity.Eco_Cri,
+                entity.nom,
+                entity.description,
+                entity.prix,
+                entity.cri_eco,
                 entity.Id_Cat);
         }
         #endregion

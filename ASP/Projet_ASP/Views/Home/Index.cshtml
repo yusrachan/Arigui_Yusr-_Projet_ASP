@@ -1,8 +1,25 @@
-﻿@{
+﻿@model IEnumerable<BLL.Entities.Produit>
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+    <h1 class="display-4">Bonjour !</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+<form asp-controller="Home" asp-action="Search" method="get">
+    <input type="text" name="searchTerm" placeholder="Rechercher des produits"/>
+    <button type="submit">Recherche</button>
+</form>
+
+@foreach (var produit in Model)
+{
+    <div>
+        <h2>
+            <a asp-controller="Product" asp-action="Index" asp-route-id="@produit.Id_Prod">@produit.nom</a>
+        </h2>
+        <img src="@produit.UrlPremierMedia" alt="Image de @produit.nom" />
+        <p>Prix: @produit.prix</p>
+    </div>
+}

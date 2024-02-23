@@ -14,5 +14,9 @@ namespace DAL.Services
         {
             connectionString = configuration.GetConnectionString(dbname);
         }
+
+        protected BaseService(IConfiguration configuration)
+        {
+        }
     }
 }

@@ -2,5 +2,6 @@
 {
     public interface IProduitRepository<TEntity> : ICRUDRepository<TEntity, int>
     {
+        IEnumerable<TEntity> Search(string searchTerm, int? catId, string ecoCrit);
     }
 }
